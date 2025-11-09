@@ -45,7 +45,7 @@ int main() {
     cout << "Enter profit and weight of each item:\n";
     for (int i = 0; i < n; i++) {
         cin >> items[i].profit >> items[i].weight;
-        items[i].ratio = (double)items[i].profit / items[i].weight;
+        items[i].ratio = items[i].profit / items[i].weight;
     }
 
     double maxProfit = fractionalKnapsack(capacity, items);
