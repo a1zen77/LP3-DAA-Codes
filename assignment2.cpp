@@ -39,7 +39,7 @@ void printCodes(HuffmanNode* root, string str) {
 void huffmanEncoding(vector<char>& chars, vector<int>& freq) {
     priority_queue<HuffmanNode*, vector<HuffmanNode*>, Compare> pq;
 
-    for (size_t i = 0; i < chars.size(); i++) {
+    for (int i = 0; i < chars.size(); i++) {
         pq.push(new HuffmanNode(chars[i], freq[i]));
     }
 
@@ -47,7 +47,7 @@ void huffmanEncoding(vector<char>& chars, vector<int>& freq) {
         HuffmanNode *left = pq.top(); pq.pop();
         HuffmanNode *right = pq.top(); pq.pop();
 
-        HuffmanNode *top = new HuffmanNode('$', left->freq + right->freq);
+        HuffmanNode *top = new HuffmanNode(' ', left->freq + right->freq);
         top->left = left;
         top->right = right;
 
